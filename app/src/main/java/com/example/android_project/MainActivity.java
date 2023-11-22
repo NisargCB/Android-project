@@ -1,8 +1,13 @@
 package com.example.android_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,54 +17,64 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
 //    private ActivityMainBinding binding;
-    private  Toolbar toolbar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        binding = ActivityMainBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
-
-        toolbar=findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        BottomNavigationView navView = findViewById(R.id.nav_view);
-//        // Passing each menu ID as a set of Ids because each
-//        // menu should be considered as top level destinations.
-//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-//                .build();
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-//        NavigationUI.setupWithNavController(binding.navView, navController);
 
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+    }
 
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
 //    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.search_view, menu);
-//        MenuItem searchItem = menu.findItem(R.id.action_search);
-//        SearchView searchView = (SearchView) searchItem.getActionView();
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
 //
-//        // Configure and handle the SearchView as mentioned in the previous response.
+//        if (id == R.id.account) {
+////            Intent intent = new Intent(MainActivity.this, com.example.android_project.ProfilePage.class);
+////
+////            startActivity(intent);
+//            Toast.makeText(this, "Profile Account Item Clicked", Toast.LENGTH_SHORT).show();
 //
-//        return true;
+//            return true;
+//
+//        }
+//        else if (id == R.id.search) {
+////            Intent intent = new Intent(MainActivity.this, com.example.android_project.ProfilePage.class);
+////
+////            startActivity(intent);
+//            Toast.makeText(this, "Search Item Clicked", Toast.LENGTH_SHORT).show();
+//
+//            return true;
+//
+//        }
+//        else{
+//
+//        return super.onOptionsItemSelected(item);}
 //    }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.menu,menu);
-        return true;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.profile_icon) {
+            // Handle the profile icon click
+            startActivity(new Intent(this, ProfilePage.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
+
 
 
 

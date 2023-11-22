@@ -39,15 +39,15 @@
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         android:text="Login" />
-    <Button
-        android:id="@+id/sign_up"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonLogin"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:text="Sign Up" />
+<!--    <Button-->
+<!--        android:id="@+id/sign_up"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/buttonLogin"-->
+<!--        android:layout_marginStart="100dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="Sign Up" />-->
 
     <TextView
         android:id="@+id/textViewForgotPassword"
